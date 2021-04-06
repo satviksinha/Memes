@@ -2,6 +2,12 @@ const canvas = document.getElementById('play-area');
 canvas.width=0;
 canvas.height=0;
 
+const increaseBrightness = document.getElementById('increase-brightness');
+const decreaseBrightness = document.getElementById('decrease-brightness');
+
+const increaseContrast = document.getElementById('increase-contrast');
+const decreaseContrast = document.getElementById('decrease-contrast');
+
 var ctx = canvas.getContext('2d');
 const textArea = document.getElementById('textarea');
 //console.log(textArea);
@@ -43,6 +49,7 @@ function draw(img){
 
 var addText = document.getElementById('add-text');
 addText.addEventListener('click',function(){
+    alert("Note: Default color of text is white");
     alert("Select the area where you want to add text");
     canvas.classList.add('cursor');
 });
@@ -67,3 +74,35 @@ function downloadImage(){
     link.download = "meme.png";
     link.click();
 }
+
+var percent =100;
+var dx =4;
+decreaseBrightness.addEventListener('click',function(){
+    if(percent){
+    percent-=dx;
+    canvas.style.filter = `brightness(${percent}%)`;
+    }
+});
+
+
+increaseBrightness.addEventListener('click',function(){
+    if(percent!=100){
+        percent+=dx;
+        canvas.style.filter = `brightness(${percent}%)`;
+    }
+});
+
+var contrast =100;
+increaseContrast.addEventListener('click',function(){
+    if(contrast!=100){
+        contrast+=dx;
+        canvas.style.filter = `contrast(${contrast}%)`;
+    }
+});
+
+decreaseContrast.addEventListener('click',function(){
+    if(contrast){
+        contrast-=dx;
+        canvas.style.filter = `contrast(${contrast}%)`;
+    }
+});
