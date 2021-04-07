@@ -14,7 +14,7 @@ h1{
     justify-content: center;
 }
 .task-bar{
-    background:rgba(210,105,30,0.5);
+    background:rgba(210,105,30,0.7);
     display:flex;
     justify-content: space-evenly;
     align-items: center;
@@ -25,6 +25,7 @@ h1{
 .button{
     display:flex;
     align-items:center;
+    padding:1vh;
 }
 input[type="file"]{
     padding:2vh;
@@ -42,4 +43,50 @@ canvas{
 }
 .cursor{
     cursor:pointer;
+}
+.sidebar{
+    display:flex;
+    justify-content: space-evenly;
+    width:100%;
+    background:rgba(210,105,30,0.4);
+    margin:0;
+    padding:0;
+}
+.sidebar button{
+    padding:1vh;
+    font-size:1.3em;
+    font-weight:bold;
+}
+.sidebar h2{
+    color:white;
+    font-size:0.95em;
+}
+.sidebar label{
+    display:flex;
+    align-items: center;
+}
+select{
+    height:2rem;
+    margin-top:1.5vh;
+}
+.flex-container{
+    display:flex;
+}
+.template{
+    /*display:grid;
+    grid-template-columns: repeat(5,1fr);*/
+    display:flex;
+    flex-direction: column;
+    height:fit-content;
+    padding-left:2vw;
+    padding-right:2vw;
+    background:rgba(210,105,30,0.2);
+    width:fit-content;
+}
+.template div{
+    margin-bottom: 5vh;
+}
+.bg{
+    background-size:cover;
+    background-position: center;
 }

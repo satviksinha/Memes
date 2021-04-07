@@ -60,8 +60,9 @@ canvas.addEventListener('click',function(e){
    // console.log( e.clientX -canvas.offsetLeft);
 
    ctx.font = canvas.width/10 +'px';
-   ctx.fillStyle = 'white';
+   ctx.fillStyle = `${colorvar}`;
    ctx.strokeStyle = 'black';
+   ctx.font = `${fontvar}px Arial`;
    ctx.fillText(textArea.value,e.clientX -canvas.offsetLeft,e.clientY - canvas.offsetTop); 
 });
 
@@ -105,4 +106,58 @@ decreaseContrast.addEventListener('click',function(){
         contrast-=dx;
         canvas.style.filter = `contrast(${contrast}%)`;
     }
+});
+
+const dropDown = document.getElementById('fontsize');
+const colorDrop = document.getElementById('color-change');
+console.log(dropDown);
+
+/*dropDown.addEventListener('click',function(){
+    console.log(dropDown.options[dropDown.selectedIndex]);
+});*/
+//changeFont(selectFont);
+
+var fontvar;
+function changeOption(){
+    console.log(dropDown.options[dropDown.selectedIndex].text);
+    fontvar = dropDown.options[dropDown.selectedIndex].text;
+}
+
+var colorvar;
+function colorChange(){
+    console.log(colorDrop.options[colorDrop.selectedIndex].text);
+    colorvar = colorDrop.options[colorDrop.selectedIndex].text;
+}
+
+const meme1 = document.querySelector('.m1');
+const meme2 = document.querySelector('.m2');
+const meme3 = document.querySelector('.m3');
+const meme4 = document.querySelector('.m4');
+const meme5 = document.querySelector('.m5');
+console.log(meme1);
+
+meme1.addEventListener('click',function(){
+    var template = new Image;
+    template.src = "meme1new.jpg";
+    generateMeme(template);
+});
+meme2.addEventListener('click',function(){
+    var template = new Image;
+    template.src = "meme2new.jpg";
+    generateMeme(template);
+});
+meme3.addEventListener('click',function(){
+    var template = new Image;
+    template.src = "meme3new.jpg";
+    generateMeme(template);
+});
+meme4.addEventListener('click',function(){
+    var template = new Image;
+    template.src = "meme4new.jpg";
+    generateMeme(template);
+});
+meme5.addEventListener('click',function(){
+    var template = new Image;
+    template.src = "meme5new.jpg";
+    generateMeme(template);
 });

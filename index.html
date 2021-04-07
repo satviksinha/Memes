@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,19 +8,75 @@
     <link rel="stylesheet" href="styles.css">
     <title>Meme Generator</title>
 </head>
+
 <body>
     <h1>Meme Generator</h1>
     <div class="task-bar">
-        <div class="button"> <label for="image-file">Upload Image :</label> <input type="file" id="image-file" accept="image/*"></div>
-        <div class="button"><button id="add-text">Add text</button> <textarea name="MemeText" id="textarea"></textarea></div>
+        <div class="button"> <label for="image-file">Upload Image :</label> <input type="file" id="image-file"
+                accept="image/*"></div>
+        <div class="button"><button id="add-text">Add text</button> <textarea name="MemeText" id="textarea"></textarea>
+        </div>
         <div class="button"><button id="generate">Display Image</button></div>
         <div class="button"><button id="download"> Save and Download</button></div>
-        <div class="button"><label for="brightness">Brightness : &nbsp</label><button id="increase-brightness">+</button><button id="decrease-brightness">-</button></div>
-        <div class="button"><label for="contrast">Contrast : &nbsp</label><button id="increase-contrast">+</button><button id="decrease-contrast">-</button></div>
+    </div>
+    <div class="sidebar">
+        <div class="button"><label for="brightness">Brightness : &nbsp</label><button
+                id="increase-brightness">+</button><button id="decrease-brightness">-</button></div>
+        <div class="button"><label for="contrast">Contrast : &nbsp</label><button
+                id="increase-contrast">+</button><button id="decrease-contrast">-</button></div>
+        <div class="flex-container">
+            <label for="font-size">Font Size: &nbsp</label>
+            <select name="font-size" id="fontsize" onchange="changeOption()">
+                <label for="font-size">Font Size: &nbsp</label>
+                <option value="8">8</option>
+                <option value="10">10</option>
+                <option value="12">12</option>
+                <option value="14">14</option>
+                <option value="16">16</option>
+                <option value="20">20</option>
+                <option value="24">24</option>
+                <option value="32">32</option>
+                <option value="64">64</option>
+                <option value="128">128</option>
+            </select>
+        </div>
+        <div class="flex-container">
+            <label for="color">Color: &nbsp</label>
+            <select name="color" id="color-change" onchange="colorChange()">
+                <option value="">red</option>
+                <option value="">blue</option>
+                <option value="">green</option>
+                <option value="">yellow</option>
+                <option value="">pink</option>
+                <option value="">white</option>
+                <option value="">black</option>
+                <option value="">purple</option>
+                <option value="">brown</option>
+                <option value="">chocolate</option>
+            </select>
+        </div>
+        <!--<label for="img">Meme Templates:</label>
+        <select name="img" id="img-selector">
+            <option value=""> <a href="#"><img src="meme1.jpg" width="20" height="15"></a> Meme1 </option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+        </select>-->
     </div>
     <div class="play-zone">
-    <canvas id="play-area"></canvas>
+        <canvas id="play-area"></canvas>
     </div>
+    <div class="template">
+        <h4>Basic Meme Templates:</h4>
+        <br>
+       <div ><img src="meme1new.jpg" class="m1" width="100" height="100"></div>
+       <div ><img src="meme2.jpg" class="m2"></div>
+       <div ><img src="meme3.jpg" class="m3"></div>
+       <div ><img src="meme4.jpg" class="m4"></div>
+       <div><img src="meme5.jpg"  class="m5"></div>
+        </div>
     <script src="script.js"></script>
 </body>
+
 </html>
