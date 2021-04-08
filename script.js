@@ -10,12 +10,12 @@ const decreaseContrast = document.getElementById('decrease-contrast');
 
 var ctx = canvas.getContext('2d');
 const textArea = document.getElementById('textarea');
-//console.log(textArea);
+//console.log(textArea); 
 
 const generateButton = document.getElementById('generate');
 const imageInput = document.getElementById('image-file');
 const downloadButton = document.getElementById('download');
-
+var img;
 generateButton.addEventListener('click',function(){
     //console.log(canvas);
    // console.log(generateButton);
@@ -23,7 +23,7 @@ generateButton.addEventListener('click',function(){
    const file = imageInput.files[0];
    if(file){
        reader.addEventListener('load',function(){
-            var img = new Image;
+            img = new Image;
             img.src = reader.result;
             generateMeme(img);
        });
@@ -48,10 +48,24 @@ function draw(img){
 }
 
 var addText = document.getElementById('add-text');
-addText.addEventListener('click',function(){
-    alert("Note: Default color of text is white");
-    alert("Select the area where you want to add text");
+addText.addEventListener('click',function(e){
+   alert("Note: Default color of text is white");
+   alert("Select the area where you want to add text");
+    e.preventDefault();
+    const reader = new FileReader();
+    const file = imageInput.files[0];
+    if(file){
+        reader.addEventListener('load',function(){
+             img = new Image;
+             img.src = reader.result;
+             generateMeme(img);
+        });
+    }
+    reader.readAsDataURL(file);
     canvas.classList.add('cursor');
+    console.log(textArea.value);
+    canvas.width =500;
+    canvas.height = 500;
 });
 //console.log(canvas.offsetTop);
 
@@ -117,13 +131,13 @@ console.log(dropDown);
 });*/
 //changeFont(selectFont);
 
-var fontvar;
+var fontvar =8;
 function changeOption(){
     console.log(dropDown.options[dropDown.selectedIndex].text);
     fontvar = dropDown.options[dropDown.selectedIndex].text;
 }
 
-var colorvar;
+var colorvar = 'red';
 function colorChange(){
     console.log(colorDrop.options[colorDrop.selectedIndex].text);
     colorvar = colorDrop.options[colorDrop.selectedIndex].text;

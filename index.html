@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
     <title>Meme Generator</title>
 </head>
 
 <body>
-    <h1>Meme Generator</h1>
+    <!-- <h1>Meme Generator</h1>
     <div class="task-bar">
         <div class="button"> <label for="image-file">Upload Image :</label> <input type="file" id="image-file"
                 accept="image/*"></div>
@@ -62,21 +64,136 @@
             <option value=""></option>
             <option value=""></option>
             <option value=""></option>
-        </select>-->
-    </div>
+        </select>
+    </div>-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a href="#" class="navbar-brand">MEME GENERATOR</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText1"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText1">
+            <span class="navbar-text nav-item nav-link">
+                <label for="image-file">Upload Image :</label>
+                <input type="file" id="image-file" accept="image/*">
+            </span>
+            <div class="nav-item nav-link">
+            <form class="form-inline mr-0">
+                <button id="add-text" class="btn btn-outline-light">Add text</button>
+                <input type="text" placeholder="Type your text" aria-label="Username" aria-describedby="basic-addon1"
+                    id="textarea" class="form-control"></input>
+            </form>
+            </div>
+            <div class="nav-item nav-link">
+           <button id="generate" class="btn btn-outline-light">Display Image</button>
+           </div>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a href="#" class="navbar-brand h1">Additional Features</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item nav-link ">
+                <span class="navbar-text">
+                <label for="brightness">Brightness : &nbsp</label>
+                </span>
+                <button id="increase-brightness" class="btn btn-outline-dark ">+</button>
+                <button id="decrease-brightness" class="btn btn-outline-dark ">-</button>
+              </li>
+              <li class="nav-item nav-link">
+                <span class="navbar-text">
+                <label for="contrast">Contrast : &nbsp</label>
+               </span>
+                <button id="increase-contrast" class="btn btn-outline-dark ">+</button>
+                <button id="decrease-contrast" class="btn btn-outline-dark ">-</button>
+              </li>
+              <li class="nav-item nav-link">
+                <span class="navbar-text">
+                    <label for="font-size">Font Size: &nbsp</label>
+                    </span>
+            <select name="font-size" id="fontsize" onchange="changeOption()">
+                <option value="8">8</option>
+                <option value="10">10</option>
+                <option value="12">12</option>
+                <option value="14">14</option>
+                <option value="16">16</option>
+                <option value="20">20</option>
+                <option value="24">24</option>
+                <option value="32">32</option>
+                <option value="64">64</option>
+                <option value="128">128</option>
+            </select>
+              </li>
+            <li class="nav-item nav-link">
+                <span class="navbar-text">
+                <label for="color">Color: &nbsp</label>
+                </span>
+                <select name="color" id="color-change" onchange="colorChange()">
+                    <option value="">red</option>
+                    <option value="">blue</option>
+                    <option value="">green</option>
+                    <option value="">yellow</option>
+                    <option value="">pink</option>
+                    <option value="">white</option>
+                    <option value="">black</option>
+                    <option value="">purple</option>
+                    <option value="">brown</option>
+                    <option value="">chocolate</option>
+                </select>
+            </li>
+            </ul>
+            <button id="download" class="btn btn-outline-dark"> Save and Download</button>
+          </div>
+    </nav>
     <div class="play-zone">
         <canvas id="play-area"></canvas>
     </div>
+    <!--
     <div class="template">
         <h4>Basic Meme Templates:</h4>
         <br>
-       <div ><img src="meme1new.jpg" class="m1" width="100" height="100"></div>
-       <div ><img src="meme2.jpg" class="m2"></div>
-       <div ><img src="meme3.jpg" class="m3"></div>
-       <div ><img src="meme4.jpg" class="m4"></div>
-       <div><img src="meme5.jpg"  class="m5"></div>
+        <div><img src="meme1new.jpg" class="m1" width="100" height="100"></div>
+        <div><img src="meme2.jpg" class="m2"></div>
+        <div><img src="meme3.jpg" class="m3"></div>
+        <div><img src="meme4.jpg" class="m4"></div>
+        <div><img src="meme5.jpg" class="m5"></div>
+    </div>-->
+    <div class="container bg-dark text-white ml-2" style="width:fit-content" >
+    <h4>Basic Meme Templates:</h4>
+        <br>
+        <div class="row">
+        <div class="col"><img src="meme1new.jpg" class="m1" width="100" height="100"></div>
+        </div>
+        <br>
+        <div class="row">
+        <div class="col"><img src="meme2.jpg" class="m2"></div>
+        </div>
+        <br>
+        <div class="row">
+        <div class="col"><img src="meme3.jpg" class="m3"></div>
+        </div>
+        <br>
+        <div class="row">
+        <div class="col"><img src="meme4.jpg" class="m4"></div>
+        </div>
+        <br>
+        <div class="row">
+        <div class="col"><img src="meme5.jpg" class="m5"></div>
+        </div>
         </div>
     <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
