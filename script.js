@@ -148,6 +148,7 @@ const meme2 = document.querySelector('.m2');
 const meme3 = document.querySelector('.m3');
 const meme4 = document.querySelector('.m4');
 const meme5 = document.querySelector('.m5');
+const meme6 = document.querySelector('.m6');
 console.log(meme1);
 
 meme1.addEventListener('click',function(){
@@ -173,5 +174,10 @@ meme4.addEventListener('click',function(){
 meme5.addEventListener('click',function(){
     var template = new Image;
     template.src = "meme5new.jpg";
+    generateMeme(template);
+});
+meme6.addEventListener('click',function(){
+    var template = new Image;
+    template.src = "meme6.jpg";
     generateMeme(template);
 });
